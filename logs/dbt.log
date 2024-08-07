@@ -1,0 +1,87 @@
+[0m23:15:05.488571 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C99E5E3710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C9A3104B00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C9A30869F0>]}
+
+
+============================== 23:15:05.496562 | fb3a4a4a-66ec-41e9-9695-ecb8000ee4d6 ==============================
+[0m23:15:05.496562 [info ] [MainThread]: Running with dbt=1.7.4
+[0m23:15:05.497551 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\kryvi\\.dbt', 'log_path': 'logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt init dbt_proj', 'send_anonymous_usage_stats': 'True'}
+[0m23:15:05.499548 [debug] [MainThread]: Starter project path: C:\Users\kryvi\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\include\starter_project
+[0m23:15:05.525547 [info ] [MainThread]: 
+Your new dbt project "dbt_proj" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m23:15:05.527563 [info ] [MainThread]: Setting up your profile.
+[0m23:15:34.807864 [debug] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\kryvi\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\adapters\factory.py", line 58, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kryvi\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\kryvi\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\adapters\snowflake\__init__.py", line 2, in <module>
+    from dbt.adapters.snowflake.connections import SnowflakeConnectionManager  # noqa
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kryvi\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\adapters\snowflake\connections.py", line 19, in <module>
+    import snowflake.connector
+ModuleNotFoundError: No module named 'snowflake.connector'; 'snowflake' is not a package
+
+[0m23:15:34.808825 [error] [MainThread]: Encountered an error:
+No module named 'snowflake.connector'; 'snowflake' is not a package
+[0m23:15:34.837292 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\kryvi\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\cli\requires.py", line 90, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kryvi\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\cli\requires.py", line 75, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kryvi\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\cli\main.py", line 515, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "C:\Users\kryvi\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\task\init.py", line 344, in run
+    self.setup_profile(profile_name)
+  File "C:\Users\kryvi\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\task\init.py", line 264, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "C:\Users\kryvi\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\task\init.py", line 174, in create_profile_from_target
+    load_plugin(adapter)
+  File "C:\Users\kryvi\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\adapters\factory.py", line 212, in load_plugin
+    return FACTORY.load_plugin(name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kryvi\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\adapters\factory.py", line 58, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kryvi\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\kryvi\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\adapters\snowflake\__init__.py", line 2, in <module>
+    from dbt.adapters.snowflake.connections import SnowflakeConnectionManager  # noqa
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kryvi\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\adapters\snowflake\connections.py", line 19, in <module>
+    import snowflake.connector
+ModuleNotFoundError: No module named 'snowflake.connector'; 'snowflake' is not a package
+
+[0m23:15:34.842377 [debug] [MainThread]: Command `dbt init` failed at 23:15:34.842377 after 29.43 seconds
+[0m23:15:34.842981 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C99E5E3710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C9A3000D70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C9A324BF20>]}
+[0m23:15:34.843987 [debug] [MainThread]: Flushing usage events
